@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+
+{% block title %}park{% endblock %}
+
+{%block content%}
+<h1>
+    book list : 
+    {% for b in bookinfo %}
+    <div>
+        {{b.title}}  {{b.price}}
+        <img src="{{ b.cover_image_url }}" alt="" style="width:200px; height:auto;">
+    </div>
+    {%endfor%}
+</h1>
+{%endblock%}
