@@ -1,3 +1,6 @@
+{%extends "app/base.html"%}
+{%load django_bootstrap5%}
+{%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,9 @@
     <p>This is a simple HTML page.</p>
     <h2>
         {{bookkk.title}}  {{bookkk.price}} 
-        <img src="{{ bookkk.cover_image_url }}" alt="" style="width:200px; height:auto;">
+        <img src="{{ bookkk.cover_image_url }}" alt="" style="width:600px; height:auto;">
     </h2>
+    <a href="/app/">목록으로</a>
 </body>
 </html>
+{%endblock%}

@@ -7,8 +7,8 @@
     book list : 
     {% for b in bookinfo %}
     <div>
-        {{b.title}}  {{b.price}}
-        <a href="/app/{{b.id}}/"><img src="{{ b.cover_image_url }}" alt="" style="width:200px; height:auto;"></a>
+        {{b.id}}. {{b.title}}  {{b.price}}
+        <a href="/app/{{b.id}}/"><img src="{{ b.cover_image_url }}" alt="miss" style="width:100px; height:auto;"></a>
     </div>
     {%endfor%}
 </h1>
