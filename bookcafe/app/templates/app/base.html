@@ -10,15 +10,16 @@
     {% endblock %}
     {% if user.is_authenticated %}
         <p>
-            <form method="POST" action="/accounts/login/">
+            logged by {{user}}
+            <form method="POST" action="/accounts/logout/">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
         </p>
     {% else %}
-    <form method="POST" action="/accounts/logout/">
+    <form method="POST" action="/accounts/login/">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Logout</button>
+        <button type="submit" class="btn btn-danger">Login</button>
     </form>
     {% endif %}
 </body>
