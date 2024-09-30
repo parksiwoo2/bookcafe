@@ -4,11 +4,16 @@
 
 {%block content%}
 <h1>
+    <form action="" method="get" autocomplete="off" class="my-4">
+        <input type="text" name="query" placeholder="검색어를 입력해주세요" autofocus
+        value="{{query}}">
+    </form>
     book list : 
     {% for b in bookinfo %}
     <div>
-        {{b.id}}. {{b.title}}  {{b.price}}
-        <a href="/app/{{b.id}}/"><img src="{{ b.cover_image_url }}" alt="miss" style="width:100px; height:auto;"></a>
+        {{b.id}} 
+        <a href="/app/{{b.id}}/"><img src="{{ b.cover_image_url }}" alt="miss" style="width:120px; height:auto;"></a>
+        {{b.title}}  {{b.price | intcomma}}
     </div>
     {%endfor%}
 </h1>

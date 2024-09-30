@@ -6,9 +6,15 @@ from django.contrib.auth.decorators import login_required
 
 def index(request: HttpRequest) -> HttpResponse:
     book=Book.objects.all()
+    query=request.GET.get("query","").strip()
+    if query:
+        book_list = book.filter(title__icontains=query)
+    else:
+        book_list=book
     return render(request,"app/home.html",
                   {
-                      'bookinfo':book,
+                      'bookinfo':book_list,
+                      'query':query,
                   })
 @login_required
 def id(request:HttpRequest,pk:int)-> HttpResponse:
@@ -17,3 +23,4 @@ def id(request:HttpRequest,pk:int)-> HttpResponse:
                   {
                       'bookkk':book,
                   })
+    
