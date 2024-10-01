@@ -1,7 +1,6 @@
 {% extends "app/base.html" %}
-
 {% block title %}park{% endblock %}
-
+{% load humanize %}
 {%block content%}
 <h1>
     <form action="" method="get" autocomplete="off" class="my-4">
@@ -13,7 +12,7 @@
     <div>
         {{b.id}} 
         <a href="/app/{{b.id}}/"><img src="{{ b.cover_image_url }}" alt="miss" style="width:120px; height:auto;"></a>
-        {{b.title}}  {{b.price | intcomma}}
+        {{b.title}}  <strong><i>{{b.price|intcomma}}</i></strong>
     </div>
     {%endfor%}
 </h1>
